@@ -1,5 +1,5 @@
 # Jorge Lopez
-I am currently studying to get my associates degree in geography and then transferring to Cal Poly Pomona to obtain my Bachelor’s degree in civil engineering. I plan to use GIS to aid in my career when I become a civil engineer.
+I am currently studying to get my associates degree in geography and then transferring to Cal Poly Pomona to obtain my Bachelor’s degree in civil engineering. I plan to use GIS to aid me in my career when I become a civil engineer.
 ---
 ## Covid 19 rates by population density
 This map shows the relation between covid 19 rates and population density(images/disease mapping.png)
