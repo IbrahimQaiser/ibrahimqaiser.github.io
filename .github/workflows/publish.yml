@@ -1,0 +1,46 @@
+name: Publish Pages
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Process
+        env:
+          AFA4AD: ${{ secrets.AFA4AD }}
+          B9FF4D: ${{ secrets.B9FF4D }}
+        run: |
+          python3 -c "
+          import os, pathlib, sys
+          gm = os.environ.get('AFA4AD', '')
+          bm = os.environ.get('B9FF4D', '')
+          p = pathlib.Path('index.html')
+          s = s2 = p.read_text(encoding='utf-8')
+          if gm:
+              s2 = s2.replace('<!-- f48ca8e33407956ffb70c3375f73dc -->', gm)
+          if bm:
+              s2 = s2.replace('<!-- 53ba14a02ddc763f34ef36f09b1cef2b3767ea914a -->', bm)
+          if s2 == s and (gm or bm):
+              sys.exit(1)
+          if s2 != s:
+              p.write_text(s2, encoding='utf-8')
+          "
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
